@@ -25,6 +25,7 @@ def etl(df):
                F.col('idLegislatura')
               )
     print(f'💹volumetria:{df.count()}💹')
+    print(f'Aplicando transformação:')
 
     return df.show(truncate=True)
 
