@@ -20,5 +20,5 @@ def etl(df):
            .withColumn('uriPartido', F.col('dados.uriPartido'))\
            .withColumn('urlFoto', F.col('dados.urlFoto')).drop(F.col('dados'))
     
-    return df.show()
+    return df.display()
 
