@@ -5,9 +5,9 @@ from config_class_api import PipelineApi
 
 
 
-def etl(path):
+def etl():
     df = PipelineApi()
-    df = df.read_dataframe(path)
+    df = df.read_dataframe()
 
     df = df.withColumn('dados', F.explode(F.col('dados')))\
            .withColumn('id', F.col('dados.id'))\
