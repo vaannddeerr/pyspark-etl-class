@@ -9,7 +9,7 @@ def executa_pipeline():
     menager = PipelineApi(url='https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&ordenarPor=nome')
     resultado = menager.consummer_api()
     menager.save_response(path, resultado)
-    menager.read_dataframe(menager)
+    menager.read_dataframe(menager, is_path=False)
     
 
     
