@@ -10,9 +10,9 @@ def executa_pipeline():
     resultado = menager.consummer_api()
     menager.save_response(path, resultado)
     menager = menager.read_dataframe(menager)
-    df = etl(menager)
+    
 
-    return df
+    return menager
     
 
 if __name__=="__main__":

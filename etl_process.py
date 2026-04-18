@@ -7,9 +7,9 @@ from pyspark.sql import functions as F
 
 def etl(menager):
 
-    df = menager
+    
 
-    df = df.withColumn('dados', F.explode(F.col('dados')))\
+    df = menager.withColumn('dados', F.explode(F.col('dados')))\
            .withColumn('id', F.col('dados.id'))\
            .withColumn('email', F.col('dados.email'))\
            .withColumn('idLegislatura', F.col('dados.idLegislatura'))\
