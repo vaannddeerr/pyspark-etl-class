@@ -1,4 +1,5 @@
 from config_class_api import PipelineApi
+from etl_process import etl
 
 
 def executa_pipeline():
@@ -8,6 +9,7 @@ def executa_pipeline():
     minha_api = PipelineApi(url='https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&ordenarPor=nome')
     resultado = minha_api.consummer_api()
     minha_api.save_response(path, resultado)
+    etl()
 
 if __name__=="__main__":
     executa_pipeline()    
