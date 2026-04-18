@@ -49,6 +49,6 @@ class PipelineApi:
         
             return self.df
 
-        print(f'Dataframe carregado com sucesso, registros capturados:{self.df.count()}')
+        print(f'Dataframe carregado com sucesso...')
 
     
