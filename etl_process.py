@@ -18,7 +18,12 @@ def etl(df):
            .withColumn('siglaUf', F.col('dados.siglaUf'))\
            .withColumn('uri', F.col('dados.uri'))\
            .withColumn('uriPartido', F.col('dados.uriPartido'))\
-           .withColumn('urlFoto', F.col('dados.urlFoto')).drop(F.col('dados'))
+           .withColumn('urlFoto', F.col('dados.urlFoto')).drop(F.col('dados'))\
+       .select(
+               F.col('id'),
+               F.col('email'),
+               F.col('idLegislatura')
+              )
     
-    return df.show(truncate=False)
+    return df.show(truncate=True)
 
