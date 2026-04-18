@@ -6,11 +6,22 @@ def executa_pipeline():
     file_path = 'dadosabertos_v2.json'
     path = f'/Volumes/workspace/default/landing_zone/{file_path}'
 
+    print('=================================================================================================')
     menager = PipelineApi(url='https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&ordenarPor=nome')
+    print(f'Consumindo API:{menager}')
+
+    print('=================================================================================================')
     resultado = menager.consummer_api()
+    print(f'Resultado da solicitação:{resultado}')
+
+    print('=================================================================================================')
     menager.save_response(path, resultado)
+    print(f'Salvando resultado:{menager.save_response(path, resultado)}')
+
+    print('=================================================================================================')
     menager.read_dataframe(path, is_path=True)
     menager = etl(menager.df)
+    print(f'Aplicando transformação:{menager}')
     
     return menager
 
