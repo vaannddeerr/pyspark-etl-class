@@ -7,7 +7,7 @@ from pyspark.sql import functions as F
 
 def etl(menager):
 
-    df = menager.read_file()
+    df = menager
 
     df = df.withColumn('dados', F.explode(F.col('dados')))\
            .withColumn('id', F.col('dados.id'))\
