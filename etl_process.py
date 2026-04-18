@@ -1,11 +1,13 @@
 from pyspark.sql import functions as F
-from config_class_api import PipelineApi
 
 
 
 
 
-def etl(df):
+
+def etl(menager):
+
+    df = menager.read_file()
 
     df = df.withColumn('dados', F.explode(F.col('dados')))\
            .withColumn('id', F.col('dados.id'))\
