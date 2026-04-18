@@ -41,8 +41,10 @@ class PipelineApi:
     def read_dataframe(self, path_file:str, is_path:bool=True):
 
         if is_path:
+            print(f'Lendo arquivo...')
             self.df = self.spark.read.format('json').option('multiline',True).load(path_file)
         else:
+            print(f'Lendo Tabela...')
             self.df = self.spark.read.table(path_file)
         
             return self.df
