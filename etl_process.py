@@ -1,11 +1,12 @@
 from pyspark.sql import functions as F
+from pyspark.sql import dataframe
 from config_class_api import PipelineApi
 
 
 
 
 
-def etl(df):
+def etl(df:dataframe):
 
     df = df.withColumn('dados', F.explode(F.col('dados')))\
            .withColumn('id', F.col('dados.id'))\

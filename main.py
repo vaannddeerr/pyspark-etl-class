@@ -10,6 +10,7 @@ def executa_pipeline():
     resultado = minha_api.consummer_api()
     minha_api.save_response(path, resultado)
     df = minha_api.read_dataframe(path)
+    df = etl(df)
 
     return df
     
