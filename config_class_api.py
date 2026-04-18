@@ -48,6 +48,6 @@ class PipelineApi:
         
             return self.df
 
-        print(f'Lendo DataFrame📖')
+        print(f'📖Lendo DataFrame')
 
     

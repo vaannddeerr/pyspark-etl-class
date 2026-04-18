@@ -14,7 +14,7 @@ def executa_pipeline():
     print(f'📖Resultado da solicitação:')
 
     menager.save_response(path, resultado)
-    print(f'✔️Arquivo salvo com sucesso✔️')
+    print(f'✔️Arquivo salvo com sucesso')
 
     print('================================')
     menager.read_dataframe(path, is_path=True)
