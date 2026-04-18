@@ -33,7 +33,7 @@ class PipelineApi:
                 # indent=4 serve para o arquivo ficar "estruturado" e legível
                 json.dump(response, output_response, indent=4, ensure_ascii=False)
         
-            print(f"Arquivo salvo com sucesso como '{path}'!")
+            print(f"Local onde o arquivo foi salvo: '{path}'✍️")
         else:
             print(f"Não foi possível salvar. Erro: {self.error}")
 

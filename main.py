@@ -11,9 +11,8 @@ def executa_pipeline():
   
 
     resultado = menager.consummer_api()
-    print(f'📖Resultado da solicitação📖')
+    print(f'📖Resultado da solicitação:')
 
-    print('================================')
     menager.save_response(path, resultado)
     print(f'✔️Arquivo salvo com sucesso✔️')
 
