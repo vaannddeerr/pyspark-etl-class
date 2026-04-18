@@ -24,6 +24,7 @@ def etl(df):
                F.col('email'),
                F.col('idLegislatura')
               )
+    print(f'Registros:{df.count()}')
     
     return df.show(truncate=True)
 
