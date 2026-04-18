@@ -10,7 +10,7 @@ def executa_pipeline():
     resultado = menager.consummer_api()
     menager.save_response(path, resultado)
     menager.read_dataframe(path, is_path=False)
-    menager = etl(menager)
+    menager = etl(menager.df)
     
     return menager
 
