@@ -9,7 +9,10 @@ def executa_pipeline():
     minha_api = PipelineApi(url='https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&ordenarPor=nome')
     resultado = minha_api.consummer_api()
     minha_api.save_response(path, resultado)
-    etl()
+    df = minha_api.read_dataframe(path)
+
+    return df
+    
 
 if __name__=="__main__":
     executa_pipeline()    
