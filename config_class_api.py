@@ -1,12 +1,14 @@
 import requests
 import json
 
+from spark_config import spark_session
+
 class PipelineApi:
     def __init__(self, url:str):
         self.url = url
         self.response = None
         self.error = None
-        self.spark = None
+        self.spark = spark_session
         self.df = None
         
     def consummer_api(self):
