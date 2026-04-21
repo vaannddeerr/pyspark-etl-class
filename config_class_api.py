@@ -24,6 +24,7 @@ class PipelineApi:
             self.error = str(e)         # Aqui preenchemos o erro, se der ruim
             self.response = None
             return None
+            print(f"Erro na comunicação com a API: {self.error}")
     
     def save_response(self, path:str, response:str):
 
