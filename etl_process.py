@@ -18,7 +18,9 @@ def etl(df):
            .withColumn('siglaUf', F.col('dados.siglaUf'))\
            .withColumn('uri', F.col('dados.uri'))\
            .withColumn('uriPartido', F.col('dados.uriPartido'))\
-           .withColumn('urlFoto', F.col('dados.urlFoto')).drop(F.col('dados'))
+           .withColumn('urlFoto', F.col('dados.urlFoto'))\
+           .withColumn('df_carga', F.current_timestamp())\
+           .drop(F.col('dados'))
     
     print(f'💹volumetria:{df.count()}')
     print(f'🔃Aplicando transformação:')
