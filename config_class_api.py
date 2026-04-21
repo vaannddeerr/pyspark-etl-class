@@ -50,4 +50,17 @@ class PipelineApi:
 
         print(f'📖Lendo DataFrame')
 
+    def write_dataframe(self, tableName:str):
+        """Grava o DataFrame atual como uma tabela Delta."""
+        if self.df is None:
+            raise ValueError("❌Não há dados carregados para gravar! Use ler_tabela primeiro.")
+        
+        self.df.write \
+            .format("delta") \
+            .mode('overwrite') \
+            .saveAsTable(tableName)
+        print(f"Tabela {tableName} gravada com sucesso✔️.")
+        
+
+
     

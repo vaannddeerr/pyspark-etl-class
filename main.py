@@ -19,6 +19,9 @@ def executa_pipeline():
     print('================================')
     menager.read_dataframe(path, is_path=True)
     menager = etl(menager.df)
+
+    print('================================')
+    menager.write_dataframe('tableNameFull')
     
     
     return menager
