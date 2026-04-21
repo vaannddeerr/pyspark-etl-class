@@ -21,7 +21,7 @@ def executa_pipeline():
     menager.df = etl(menager.df)
 
     print('================================')
-    menager.write_dataframe(menager.df)
+    menager.write_dataframe('tablenamefull')
     
     
 
