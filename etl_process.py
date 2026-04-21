@@ -18,12 +18,8 @@ def etl(df):
            .withColumn('siglaUf', F.col('dados.siglaUf'))\
            .withColumn('uri', F.col('dados.uri'))\
            .withColumn('uriPartido', F.col('dados.uriPartido'))\
-           .withColumn('urlFoto', F.col('dados.urlFoto')).drop(F.col('dados'))\
-       .select(
-               F.col('id'),
-               F.col('email'),
-               F.col('idLegislatura')
-              )
+           .withColumn('urlFoto', F.col('dados.urlFoto')).drop(F.col('dados'))
+    
     print(f'💹volumetria:{df.count()}')
     print(f'🔃Aplicando transformação:')
 
