@@ -18,10 +18,10 @@ def executa_pipeline():
 
     print('================================')
     menager.read_dataframe(path, is_path=True)
-    etl(menager.df)
+    df = etl(menager.df)
 
     print('================================')
-    menager.write_dataframe('base_teste')
+    menager.write_dataframe(df)
     
     
 
