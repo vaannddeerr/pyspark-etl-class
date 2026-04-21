@@ -18,7 +18,7 @@ def executa_pipeline():
 
     print('================================')
     menager.read_dataframe(path, is_path=True)
-    etl(menager.df)
+    menager.df = etl(menager.df)
 
     print('================================')
     menager.write_dataframe(menager.df)
