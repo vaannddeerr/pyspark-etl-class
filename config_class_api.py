@@ -44,10 +44,10 @@ class PipelineApi:
 
         if is_path:
             self.df = self.spark.read.format('json').option('multiline',True).load(path_file)
+            print(f'colunas: {self.df.printSchema()}')
         else:
             print(f'Lendo Tabela...')
             self.df = self.spark.read.table(path_file)
-            print(f'colunas: {self.df.printSchema()}')
             return self.df
 
         print(f'📖Lendo DataFrame')
