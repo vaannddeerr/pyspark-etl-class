@@ -47,7 +47,7 @@ class PipelineApi:
         else:
             print(f'Lendo Tabela...')
             self.df = self.spark.read.table(path_file)
-        
+            print(f'colunas: {self.df.printSchema()}')
             return self.df
 
         print(f'📖Lendo DataFrame')
