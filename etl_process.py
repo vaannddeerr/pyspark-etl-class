@@ -27,5 +27,5 @@ def etl(df):
     print(f'💹volumetria:{df.count()}')
     print(f'🔃Aplicando transformação:')
 
-    return df.show(truncate=True)
+    return df
 
