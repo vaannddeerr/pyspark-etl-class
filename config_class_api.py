@@ -10,7 +10,7 @@ class PipelineApi:
         self.error = None
         self.spark = SparkSession.builder.getOrCreate()
         self.df = None
-        self.tableName = None
+        
         
     def consummer_api(self):
         try:
