@@ -56,7 +56,9 @@ class PipelineApi:
         """Grava o DataFrame atual como uma tabela Delta."""
         if self.df is None:
             raise ValueError("❌Não há dados carregados para gravar! Use ler_tabela primeiro.")
-        self.spark.sql('f'refresh table {tableName})
+        
+        self.spark.sql('frefresh table {tableName}')
+
         self.df.write \
             .format("delta") \
             .mode('overwrite') \
