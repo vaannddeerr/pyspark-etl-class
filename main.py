@@ -8,10 +8,6 @@ def executa_pipeline():
     print('🔛Iniciando processamento.🔛')
     print('================================')
     menager = PipelineApi(url='https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&ordenarPor=nome')
-    
-    spark = menager.spark
-
-    spark.conf.set("spark.databricks.delta.schema.autoMerge.enabled", "true")
   
 
     resultado = menager.consummer_api()
