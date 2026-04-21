@@ -44,7 +44,7 @@ class PipelineApi:
 
         if is_path:
             self.df = self.spark.read.format('json').option('multiline',True).load(path_file)
-            print(f'colunas: {self.df.printSchema()}')
+            
         else:
             print(f'Lendo Tabela...')
             self.df = self.spark.read.table(path_file)
@@ -56,7 +56,7 @@ class PipelineApi:
         """Grava o DataFrame atual como uma tabela Delta."""
         if self.df is None:
             raise ValueError("❌Não há dados carregados para gravar! Use ler_tabela primeiro.")
-        
+        self.spark.sql('f'refresh table {tableName})
         self.df.write \
             .format("delta") \
             .mode('overwrite') \
