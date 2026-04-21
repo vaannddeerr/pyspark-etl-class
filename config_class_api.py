@@ -60,7 +60,8 @@ class PipelineApi:
         self.df.write \
             .format("delta") \
             .mode('overwrite') \
-            .saveAsTable(tableName)
+            .saveAsTable(tableName)\
+            .option('overwriteSchema',True)
         print(f"Tabela {tableName} gravada com sucesso✔️.")
         
 
